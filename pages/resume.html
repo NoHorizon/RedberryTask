@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>პირადი</title>
+    <!-- CSS link -->
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body>
+    <div class="wrapper-resume">
+      <div class="left">
+        <a href="../index.html">
+          <div class="back"><img width="10px" src="../img/buttons/Vector.svg" alt=""></div>
+        </a>
+          <div class="content-hidden">
+              <div id="content" class="content">
+    <div class="content-item">
+      <header class="header-resume">
+          <div class="header-resume_title">ᲞᲘᲠᲐᲓᲘ ᲘᲜᲤᲝ</div>
+          <div class="header-resume_current">1/3</div>
+      </header>
+      <div class="fullname">
+          <div class="fullname_name">
+              <label class="fullname_title title1" for="">სახელი</label>
+              <div class="fullname-div">
+                  <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
+                  <input pattern="[^A-Za-z0-9^ა-ჰ]+" id="fullname_name" class="fullname_input" type="text" placeholder="ანზორი" ></input>
+              <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
+
+              </div>
+              <label class="subtitle" for="">მინიმუმ 2 ასო, ქართული ასოები</label>
+          </div>
+          <div class="fullname_surname">
+              <label class="fullname_title title1" for="">გვარი</label>
+              <div class="fullname-div-surname">
+                  <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
+
+                  <input id="fullname_surname" class="fullname_input" type="text" placeholder="მუმლაძე">
+              <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
+
+              </div>
+              <label class="subtitle" for="">მინიმუმ 2 ასო, ქართული ასოები</label>
+          </div>
+      </div>
+      <div class="photo">
+          <div class="photo_title">პირადი ფოტოს ატვირთვა</div>
+          <input name="file" id="download" type="file">
+          <label for="download">ატვირთვა</label>
+      </div>
+      <div class="about-me">
+          <div class="about-me_title title1">ჩემ შესახებ (არასავალდებულო)</div>
+          <textarea id="about-me_text-area" class="about-me_text-area" name="" cols="" rows="4" placeholder="ზოგადი ინფო შენ შესახებ"></textarea>
+      </div>
+      <div class="email">
+          <div class="email_title title1">ელ.ფოსტა</div>
+          <div class="email-div">
+              <img class="img" width="20px" src="../img//VectorGood.png" alt="good-image">
+
+              <input id="email" type="email" placeholder="name@redberry.ge">
+              <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
+          </div>
+          <div class="email_subtitle subtitle">უნდა მთავრდებოდეს @redberry.ge-ით</div>
+      </div>
+        <div class="number">
+          <div class="number_title title1">მობილურის ნომერი</div>
+            <div class="number-div">
+              <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
+              <input id="number" type="text" placeholder="+995 555 55 55 55">
+              <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
+            </div>
+          <div class="number_subtitle subtitle">უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</div>
+        </div>
+            <div class="next-content-block">
+              <div class="next-content">
+                ᲨᲔᲛᲓᲔᲒᲘ
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/js.js"></script>
+  </body>
+</html>
