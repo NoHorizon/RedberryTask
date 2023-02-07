@@ -11,78 +11,367 @@
   </head>
   <body>
     <div class="wrapper-resume">
-      <div class="left">
-        <a href="../index.html">
-          <div class="back"><img width="10px" src="../img/buttons/Vector.svg" alt=""></div>
-        </a>
-          <div class="content-hidden">
-              <div id="content" class="content">
-    <div class="content-item">
-      <header class="header-resume">
-          <div class="header-resume_title">ᲞᲘᲠᲐᲓᲘ ᲘᲜᲤᲝ</div>
-          <div class="header-resume_current">1/3</div>
-      </header>
-      <div class="fullname">
-          <div class="fullname_name">
-              <label class="fullname_title title1" for="">სახელი</label>
-              <div class="fullname-div">
-                  <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
-                  <input pattern="[^A-Za-z0-9^ა-ჰ]+" id="fullname_name" class="fullname_input" type="text" placeholder="ანზორი" ></input>
-              <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
+        <div class="left">
+          <a href="../index.html">
+            <div class="back"><img width="10px" src="../img//buttons/Vector.svg" alt=""></div>
+          </a>
+            <div class="content-hidden">
+                <div id="content" class="content">
+                    <div class="content-item">
+                        <header class="header-resume">
+                            <div class="header-resume_title">ᲞᲘᲠᲐᲓᲘ ᲘᲜᲤᲝ</div>
+                            <div class="header-resume_current">1/3</div>
+                        </header>
+                        <div class="fullname">
+                            <div class="fullname_name">
+                                <label class="fullname_title title1" for="">სახელი</label>
+                                <div class="fullname-div">
+                                    <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
+                                    <input id="fullname_name" class="fullname_input" type="text" placeholder="ანზორ"></input>
+                                <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
+                                </div>
+                                <label class="subtitle" for="">მინიმუმ 2 ასო, ქართული ასოები</label>
+                            </div>
+                            <div class="fullname_surname">
+                                <label class="fullname_title title1" for="">გვარი</label>
+                                <div class="fullname-div-surname">
+                                    <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
 
-              </div>
-              <label class="subtitle" for="">მინიმუმ 2 ასო, ქართული ასოები</label>
-          </div>
-          <div class="fullname_surname">
-              <label class="fullname_title title1" for="">გვარი</label>
-              <div class="fullname-div-surname">
-                  <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
+                                    <input id="fullname_surname" class="fullname_input" type="text" placeholder="მუმლაძე">
+                                <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
 
-                  <input id="fullname_surname" class="fullname_input" type="text" placeholder="მუმლაძე">
-              <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
+                                </div>
+                                <label class="subtitle" for="">მინიმუმ 2 ასო, ქართული ასოები</label>
+                            </div>
+                        </div>
+                        <div class="photo">
+                            <div class="photo_title">პირადი ფოტოს ატვირთვა</div>
+                            <input name="file" id="download" type="file">
+                            <label for="download">ატვირთვა</label>
+                        </div>
+                        <div class="about-me">
+                            <div class="about-me_title title1">ჩემ შესახებ (არასავალდებულო)</div>
+                            <textarea id="about-me_text-area" class="about-me_text-area" name="" id="" cols="" rows="4" placeholder="ზოგადი ინფო შენ შესახებ"></textarea>
+                        </div>
+                        <div class="email">
+                            <div class="email_title title1">ელ.ფოსტა</div>
+                            <div class="email-div">
+                                <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
+                                <input id="email" type="email" placeholder="anzor@redberry.ge">
+                                <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
+                            </div>
+                            <div class="email_subtitle subtitle">უნდა მთავრდებოდეს @redberry.ge-ით</div>
+                        </div>
+                        <div class="number">
+                            <div class="number_title title1">მობილურის ნომერი</div>
+                            <div class="number-div">
+                                <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
 
-              </div>
-              <label class="subtitle" for="">მინიმუმ 2 ასო, ქართული ასოები</label>
-          </div>
-      </div>
-      <div class="photo">
-          <div class="photo_title">პირადი ფოტოს ატვირთვა</div>
-          <input name="file" id="download" type="file">
-          <label for="download">ატვირთვა</label>
-      </div>
-      <div class="about-me">
-          <div class="about-me_title title1">ჩემ შესახებ (არასავალდებულო)</div>
-          <textarea id="about-me_text-area" class="about-me_text-area" name="" cols="" rows="4" placeholder="ზოგადი ინფო შენ შესახებ"></textarea>
-      </div>
-      <div class="email">
-          <div class="email_title title1">ელ.ფოსტა</div>
-          <div class="email-div">
-              <img class="img" width="20px" src="../img//VectorGood.png" alt="good-image">
+                                <input id="number" type="text" placeholder="995 551 12 34 56">
+                                <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
 
-              <input id="email" type="email" placeholder="name@redberry.ge">
-              <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
-          </div>
-          <div class="email_subtitle subtitle">უნდა მთავრდებოდეს @redberry.ge-ით</div>
-      </div>
-        <div class="number">
-          <div class="number_title title1">მობილურის ნომერი</div>
-            <div class="number-div">
-              <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
-              <input id="number" type="text" placeholder="+995 555 55 55 55">
-              <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
+                            </div>
+                            <div class="number_subtitle subtitle">უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</div>
+                        </div>
+                        <div class="next-content-block">
+
+                            <div class="next-content">
+                                ᲨᲔᲛᲓᲔᲒᲘ
+                            </div>
+                        </div>
+                    </div>
+                    <div id="adding" class="content-item">
+                        <header class="header-resume">
+                            <div class="header-resume_title">ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</div>
+                            <div class="header-resume_current">2/3</div>
+                        </header>
+                        <div class="position">
+                            <div class="position_title title1">თანამდებობა</div>
+                            <div class="position-div">
+                                <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
+                                    <input  id="position" class="position_input" type="text" placeholder="დეველოპერი, დიზაინერი, ა.შ."></input>
+                                <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
+                            </div>
+                            <div class="position_subtitle subtitle">მინიმუმ 2 სიმბოლო</div>
+                        </div>
+                        <div class="employer">
+                            <div class="employer_title title1">დამსაქმებელი</div>
+                            <div class="employer-div">
+                                <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
+                                    <input id="employer" class="employer_input" type="text" placeholder="დამსაქმებელი"></input>
+                                <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
+                            </div>
+                            <div class="employer_subtitle subtitle">მინიმუმ 2 სიმბოლო</div>
+                        </div>
+                        <div class="fromto">
+                            <div class="from">
+                                <div class="from_title title1">დაწყების რიცხვი</div>
+                                <input id="fromDate" type="date">
+                            </div>
+                            <div class="to">
+                                <div class="to_title title1">დამთავრების რიცხვი</div>
+                                <input id="toDate" type="date">
+
+                            </div>
+
+                        </div>
+                        <div class="description">
+                            <div class="description_title title1">აღწერა</div>
+                            <textarea rows="4" class="description_area" placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"></textarea>
+                        </div>
+                        <div class="page2Border"></div>
+                        <div class="exp1">
+                            <div class="position1">
+                                <div class="position_title1 title1">თანამდებობა</div>
+                                <div class="position-div1">
+                                    <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
+                                        <input  id="position1" class="position_input" type="text" placeholder="დეველოპერი, დიზაინერი, ა.შ."></input>
+                                    <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
+                                </div>
+                                <div class="position_subtitle1 subtitle">მინიმუმ 2 სიმბოლო</div>
+                            </div>
+                            <div class="employer1">
+                                <div class="employer_title1 title1">დამსაქმებელი</div>
+                                <div class="employer-div1">
+                                    <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
+                                        <input id="employer1" class="employer_input" type="text" placeholder="დამსაქმებელი"></input>
+                                    <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
+                                </div>
+                                <div class="employer_subtitle1 subtitle">მინიმუმ 2 სიმბოლო</div>
+                            </div>
+                            <div class="fromto1">
+                                <div class="from1">
+                                    <div class="from_title1 title1">დაწყების რიცხვი</div>
+                                    <input id="fromDate1" type="date">
+                                </div>
+                                <div class="to1">
+                                    <div class="to_title1 title1">დამთავრების რიცხვი</div>
+                                    <input id="toDate1" type="date">
+                            
+                                </div>
+                            
+                            </div>
+                            <div class="description1">
+                                <div class="description_title1 title1">აღწერა</div>
+                                <textarea rows="4" class="description_area1" placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"></textarea>
+                            </div>
+                            <div class="page2Border"></div>
+                        </div>
+                        <div class="exp2">
+                            <div class="position2">
+                                <div class="position_title2 title1">თანამდებობა</div>
+                                <div class="position-div2">
+                                    <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
+                                        <input  id="position2" class="position_input" type="text" placeholder="დეველოპერი, დიზაინერი, ა.შ."></input>
+                                    <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
+                                </div>
+                                <div class="position_subtitle2 subtitle">მინიმუმ 2 სიმბოლო</div>
+                            </div>
+                            <div class="employer2">
+                                <div class="employer_title2 title1">დამსაქმებელი</div>
+                                <div class="employer-div2">
+                                    <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
+                                        <input id="employer2" class="employer_input" type="text" placeholder="დამსაქმებელი"></input>
+                                    <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
+                                </div>
+                                <div class="employer_subtitle2 subtitle">მინიმუმ 2 სიმბოლო</div>
+                            </div>
+                            <div class="fromto2">
+                                <div class="from2">
+                                    <div class="from_title2 title1">დაწყების რიცხვი</div>
+                                    <input id="fromDate2" type="date">
+                                </div>
+                                <div class="to2">
+                                    <div class="to_title2 title1">დამთავრების რიცხვი</div>
+                                    <input id="toDate2" type="date">
+                            
+                                </div>
+                            
+                            </div>
+                            <div class="description2">
+                                <div class="description_title2 title1">აღწერა</div>
+                                <textarea rows="4" class="description_area2" placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"></textarea>
+                            </div>
+                            <div class="page2Border"></div>
+                        </div>
+                        
+                        <div class="more-experience">
+                            <div id="more-experience_button" class="more-experience_button">მეტი გამოცდილების დამატება</div>
+                        </div>
+
+                        <div class="buttons">
+                            <div class="button-prev">ᲣᲙᲐᲜ</div>
+                            <div class="button-next">ᲨᲔᲛᲓᲔᲒᲘ</div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-item">
+                        <header class="header-resume">
+                            <div class="header-resume_title">ᲒᲐᲜᲐᲗᲚᲔᲑᲐ</div>
+                            <div class="header-resume_current">3/3</div>
+                        </header>
+                        <div class="school">
+                            <div class="school_title title1">სასწავლებელი</div>
+                            <div class="school-div">
+                                <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
+                                    <input id="school" class="school_input" type="text" placeholder="დეველოპერი, დიზაინერი, ა.შ."></input>
+                                <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
+                            </div>
+                            <div class="school_subtitle subtitle">მინიმუმ 2 სიმბოლო</div>
+                        </div>
+                        <div class="school-info">
+                            <div class="school-info_degree">
+                                <div class="school-info_degree-title title1">ხარისხი</div>
+                                <input id="school-info_degree-input" list="school-list" id="myBrowser" name="myBrowser" />
+                                    <datalist id="school-list">
+                                    
+                                    </datalist>
+                            </div>
+                            <div class="school-info_date">
+                                <div class="school-info_degree-title title1">დამთავრების რიცხვი</div>
+                                <input type="date" class="school-info_degree-date"></input>
+
+                            </div>
+                        </div>
+                        <div class="school-description">
+                            <div class="school-description_title title1">აღწერა</div>
+                            <div class="school-desc-div">
+                                <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
+                                    <textarea rows="4" id="school-desc" class="school_input" type="text" placeholder="განათლების აღწერა"></textarea>
+                                <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
+                            </div>
+                        </div>
+                        <div class="bord"></div>
+                        <div class="adSchool">
+                            <div class="school1">
+                                <div class="school_title1 title1">სასწავლებელი</div>
+                                <div class="school-div1">
+                                    <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
+                                        <input id="school1" class="school_input" type="text" placeholder="დეველოპერი, დიზაინერი, ა.შ."></input>
+                                    <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
+                                </div>
+                                <div class="school_subtitle1 subtitle">მინიმუმ 2 სიმბოლო</div>
+                            </div>
+                            <div class="school-info1">
+                                <div class="school-info_degree1">
+                                    <div class="school-info_degree-title1 title1">ხარისხი</div>
+                                    <input id="school-info_degree-input1" list="school-list" id="myBrowser" name="myBrowser" />
+                                        <datalist id="school-list">
+                                        <option value="საშუალო სკოლის დიპლომი"></option>
+                                        <option value="ზოგადსაგანმანათლებლო დიპლომი"></option>
+                                        <option value="ბაკალავრი"></option>
+                                        <option value="მაგისტრი"></option>
+                                        <option value="დოქტორი"></option>
+                                        <option value="ასოცირებული ხარისხი"></option>
+                                        <option value="სტუდენტი"></option>
+                                        <option value="კოლეჯი (ხარისხის გარეშე)"></option>
+                                        <option value="სხვა"></option>
+                                        </datalist>
+                                </div>
+                                <div class="school-info_date1">
+                                    <div class="school-info_degree-title1 title1">დამთავრების რიცხვი</div>
+                                    <input type="date" class="school-info_degree-date1"></input>
+    
+                                </div>
+                            </div>
+                            <div class="school-description1">
+                                <div class="school-description_title1 title1">აღწერა</div>
+                                <div class="school-desc-div1">
+                                    <img class="img" width="20px" src="../img/VectorGood.png" alt="good-image">
+                                        <textarea rows="4" id="school-desc1" class="school_input" type="text" placeholder="განათლების აღწერა"></textarea>
+                                    <img class="img-error" width="25px" src="../img/VectorError.png" alt="">
+                                </div>
+                            </div>
+                        
+                            <div class="bord"></div>
+                        </div>
+                        <div class="more-experience">
+                            <div id="more-experience_button2" class="more-experience_button">მეტი გამოცდილების დამატება</div>
+                        </div>
+                        <div class="school-buttons">
+                            <div class="school-buttons_cancel">ᲣᲙᲐᲜ</div>
+                            <div class="school-buttons_end">ᲓᲐᲡᲠᲣᲚᲔᲑᲐ</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          <div class="number_subtitle subtitle">უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</div>
+            <!-- <button id="next">next</button> -->
+            
         </div>
-            <div class="next-content-block">
-              <div class="next-content">
-                ᲨᲔᲛᲓᲔᲒᲘ
-              </div>
+        <div class="sent">
+            <div class="sent-title">რეზიუმე წარმატებით გაიგზავნა  🎉</div>
+        </div>
+        <div class="right">
+            <img class="right-logo" src="../img/LOGO-12 1.png" alt="">
+            <div id="1" class="right_contact">
+                <div class="right_contact-info">
+                    <div class="right_contact-info_fullname">
+
+                        <div class="right_contact-info_name"></div>
+                        <div class="right_contact-info_surname"></div>
+                    </div>
+                    <div class="mail-phone">
+                        <div class="mail-phone_mail">
+                            <img src="../img/VectorMail.png" alt="email-icon">
+                            <div id="mail-field"></div>
+                        </div>
+                        <div class="mail-phone_phone">
+                            <img src="../img/VectorPhone.png" alt="phone-icon">
+                            <div id="phone-field"></div>
+                        </div>
+                    </div>
+                    <div class="about-me_block">
+                        <div class="about-me_field-assets">ᲩᲔᲛ ᲨᲔᲡᲐᲮᲔᲑ</div>
+                        <div class="about-me_field"></div>
+                    </div>
+                </div>
+                <div class="right_contact_photo-image">
+                    <img src="../img/Rectangle 9.png" id="chosen-image" alt="chosen-image">
+                </div>
             </div>
-          </div>
+            <div class="right-content_border"></div>
+            <div class="right-content_title">ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</div>
+
+            <div class="right-contact_position">
+                <div class="position-field">
+                    <div class="position-field_first"></div>
+                    <div class="position-field_second"></div>
+                </div>
+            </div>
+            <div class="right-contact_date">
+                <div class="right-contact_date-from"></div>
+                <div class="right-contact_date-to"></div>
+            </div>
+            <div class="right-contact_description"></div>
+            <div class="separator12"></div>
+            <div class="right-contact_position1">
+                <div class="position-field1">
+                    <div class="position-field_first1"></div>
+                    <div class="position-field_second1"></div>
+                </div>
+            </div>
+            <div class="right-contact_date1">
+                <div class="right-contact_date-from1"></div>
+                <div class="right-contact_date-to1"></div>
+            </div>
+            <div class="right-contact_description1"></div>
+            <div class="right-content_border2"></div>
+            <div class="toptitle">ᲒᲐᲜᲐᲗᲚᲔᲑᲐ</div>
+            <div class="right-content_school-title">
+                <div class="tt-title"></div>
+                <div class="tt-school"></div>
+            </div>
+            <div class="right-content_school-years"></div>
+            <div class="right-content_school-desc"></div>
+            <div class="separator23"></div>
+            <div class="right-content_school-title1">
+                <div class="tt-title1"></div>
+                <div class="tt-school1"></div>
+            </div>
+            <div class="right-content_school-years1"></div>
+            <div class="right-content_school-desc1"></div>
         </div>
-      </div>
     </div>
-
     <script src="../js/js.js"></script>
   </body>
 </html>
