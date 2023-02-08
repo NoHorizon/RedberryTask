@@ -789,7 +789,7 @@ body {
 .tt-title1,
 .tt-school1 {
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
   line-height: 20px;
   color: #1a1a1a;
@@ -819,8 +819,6 @@ body {
   font-size: 18px;
   line-height: 22px;
   color: #f93b1d;
-  min-height: 30px;
-  margin-bottom: 20px;
   visibility: hidden;
 }
 .toptitle.active {

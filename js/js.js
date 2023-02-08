@@ -107,3 +107,92 @@ document
     }
   });
 /////////////////////////////////////////////////////////////////////////////////////////////
+let objExp1 = {};
+let objExp2 = {};
+let objSchool1 = {};
+let objSchool2 = {};
+let added = 0;
+let addedSchool = 0;
+let currentPage = 0;
+let degreesObj = [];
+const user = {
+  name: "",
+  surname: "",
+  phone_number: "",
+  email: "",
+  image: "",
+  about_me: "",
+  experiences: [],
+  educations: [],
+};
+window.addEventListener("DOMContentLoaded", async () => {
+  degreesObj = await fetchingApiGet();
+  console.log("ffffff", degreesObj);
+  let vae;
+  for (const item of degreesObj) {
+    const option = document.createElement("option");
+
+    option.value = item.title;
+    document.querySelector("#school-list").appendChild(option);
+  }
+});
+back.addEventListener("click", () => {
+  if (currentPage == 0) return;
+  currentPage -= 1;
+  content.style.cssText = `--width: -${
+    contentHidden.clientWidth * currentPage
+  }px;`;
+  if (currentPage >= 2) {
+    document.querySelector(".wrapper-resume").classList.remove("last");
+  }
+});
+
+buttonPrev.addEventListener("click", () => {
+  if (added == 0) return;
+  document.querySelector(`.exp${added}`).classList.remove("active");
+  document.querySelector(".separator12").classList.remove("active");
+  document.querySelector(".position-field_first1").innerHTML = "";
+  document.querySelector(".position-field_second1").innerHTML = "";
+  document.querySelector(".right-contact_date-from1").innerHTML = "";
+  document.querySelector(".right-contact_date-to1").innerHTML = "";
+  document.querySelector(".right-contact_description1").innerHTML = "";
+  positionInput1.classList.remove("good");
+  employerInput1.classList.remove("good");
+  toInput1.classList.remove("good");
+  fromInput1.classList.remove("good");
+  descriptionInput1.classList.remove("good");
+  positionInput1.value = "";
+  employerInput1.value = "";
+  toInput1.value = "";
+  fromInput1.value = "";
+  descriptionInput1.value = "";
+  addMoreExp.classList.remove("disabled");
+  const index = user.experiences.findIndex((n, index) => index === added);
+  if (index !== -1) {
+    user.experiences.splice(index, 1);
+  }
+  added -= 1;
+});
+const fetchingApi = async (userObj) => {
+  const url = "https://resume.redberryinternship.ge/api/cvs";
+  const response = await fetch(url, {
+    method: "POST",
+    cache: "no-cache",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: userObj,
+  });
+  console.log("end", user);
+};
+const fetchingApiGet = async (userObj) => {
+  const url = "https://resume.redberryinternship.ge/api/degrees";
+  const response = await fetch(url, {
+    method: "GET",
+    cache: "no-cache",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  return response.json();
+};
