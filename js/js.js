@@ -196,3 +196,209 @@ const fetchingApiGet = async (userObj) => {
   });
   return response.json();
 };
+/////////////////////////////////////////////////////////////////////////////////////////////
+buttonNext.addEventListener("click", () => {
+  if (currentPage == 2) return;
+  console.log("sdsd");
+  if (added == 0) {
+    if (
+      checked(
+        positionInput,
+        employerInput,
+        fromInput,
+        toInput,
+        descriptionInput
+      )
+    ) {
+      if (!user.experiences.includes(objExp1)) {
+        objExp1 = createdExp(
+          positionInput,
+          employerInput,
+          fromInput,
+          toInput,
+          descriptionInput
+        );
+        user.experiences.push(objExp1);
+        currentPage += 1;
+        content.style.cssText = `--width: -${
+          contentHidden.clientWidth * currentPage
+        }px;`;
+        if (window.scrollY) {
+          window.scroll(0, 0);
+        }
+        document
+          .querySelector(".right-content_border2")
+          .classList.add("active");
+        document.querySelector(".toptitle").classList.add("active");
+      }
+    }
+  }
+
+  if (added == 1) {
+    if (
+      checked(
+        positionInput,
+        employerInput,
+        fromInput,
+        toInput,
+        descriptionInput
+      ) &&
+      checked(
+        positionInput1,
+        employerInput1,
+        fromInput1,
+        toInput1,
+        descriptionInput1
+      )
+    ) {
+      if (!user.experiences.includes(objExp2)) {
+        objExp2 = createdExp(
+          positionInput1,
+          employerInput1,
+          fromInput1,
+          toInput1,
+          descriptionInput1
+        );
+        user.experiences.push(objExp2);
+        currentPage += 1;
+        content.style.cssText = `--width: -${
+          contentHidden.clientWidth * currentPage
+        }px;`;
+        if (window.scrollY) {
+          window.scroll(0, 0);
+        }
+        document
+          .querySelector(".right-content_border2")
+          .classList.add("active");
+        document.querySelector(".toptitle").classList.add("active");
+      }
+    }
+  }
+});
+download.addEventListener("change", (s) => {
+  let reader = new FileReader();
+  reader.readAsDataURL(download.files[0]);
+  reader.onload = () => {
+    chosenImage.setAttribute("src", reader.result);
+    user.image = reader.result;
+  };
+});
+
+ButtonNextContent.addEventListener("click", () => {
+  if (currentPage == 2) return;
+  if (
+    nameInput.classList.contains("good") &&
+    surnameInput.classList.contains("good") &&
+    numberInput.classList.contains("good") &&
+    emailInput.classList.contains("good")
+  ) {
+    currentPage += 1;
+    content.style.cssText = `--width: -${
+      contentHidden.clientWidth * currentPage
+    }px;`;
+    document.querySelector(".right-content_border").classList.add("active");
+    document.querySelector(".right-content_title").classList.add("active");
+  }
+});
+
+nameInput.addEventListener("input", () => {
+  if (nameInput.value.length < 2) {
+    nameInput.classList.add("error");
+    fullnameDiv.classList.remove("active");
+    nameInput.classList.remove("good");
+    fullnameDiv.classList.add("error");
+  }
+  if (nameInput.value.length >= 2) {
+    nameInput.classList.add("good");
+    nameInput.classList.remove("error");
+    fullnameDiv.classList.add("active");
+  }
+  nameField.innerHTML = nameInput.value;
+  user.name = nameInput.value;
+});
+
+surnameInput.addEventListener("input", () => {
+  if (surnameInput.value.length < 2) {
+    surnameInput.classList.add("error");
+    surnameDiv.classList.remove("active");
+    surnameInput.classList.remove("good");
+  }
+  if (surnameInput.value.length >= 2) {
+    surnameInput.classList.add("good");
+    surnameInput.classList.remove("error");
+    surnameDiv.classList.add("active");
+  }
+  surnameField.innerHTML = surnameInput.value;
+  user.surname = surnameInput.value;
+});
+
+numberInput.addEventListener("input", () => {
+  if (numberInput.value.length > 0) {
+    phoneAssets.classList.add("active");
+  }
+  if (numberInput.value.length == 0) {
+    phoneAssets.classList.remove("active");
+  }
+  if (/^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/.test(numberInput.value)) {
+    numberInput.classList.remove("error");
+    numberInput.classList.add("good");
+    numberDiv.classList.add("active");
+  } else {
+    numberInput.classList.remove("good");
+    numberInput.classList.add("error");
+    numberDiv.classList.remove("active");
+  }
+  phoneField.innerHTML = numberInput.value;
+  user.phone_number = numberInput.value;
+});
+emailInput.addEventListener("input", () => {
+  if (emailInput.value.length > 0) {
+    mailAssets.classList.add("active");
+  }
+  if (emailInput.value.length == 0) {
+    mailAssets.classList.remove("active");
+    emailDiv.classList.remove("active");
+  }
+  if (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(emailInput.value)) {
+    emailDiv.classList.add("active");
+    emailInput.classList.add("good");
+    emailInput.classList.remove("error");
+  } else {
+    emailDiv.classList.remove("active");
+    emailInput.classList.remove("good");
+    emailInput.classList.add("error");
+  }
+  emailField.innerHTML = emailInput.value;
+  user.email = emailInput.value;
+});
+aboutMeInput.addEventListener("input", () => {
+  if (aboutMeInput.value.length > 0) {
+    aboutMeAssets.classList.add("active");
+    aboutMeInput.classList.add("good");
+  }
+  if (aboutMeInput.value.length == 0) {
+    aboutMeAssets.classList.remove("active");
+    aboutMeInput.classList.remove("good");
+  }
+  aboutMeField.innerHTML = aboutMeInput.value;
+  user.about_me = aboutMeInput.value;
+});
+
+const good = (s) => {
+  s.classList.add("error");
+  s.classList.remove("good");
+};
+const error = (s) => {
+  s.classList.remove("error");
+  s.classList.add("good");
+};
+const cg = (input, div) => {
+  if (input.value.length < 2) {
+    good(input);
+    div.classList.remove("active");
+  }
+  if (input.value.length >= 2) {
+    error(input);
+    div.classList.add("active");
+  }
+};
