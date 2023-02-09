@@ -402,3 +402,128 @@ const cg = (input, div) => {
     div.classList.add("active");
   }
 };
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+positionInput.addEventListener("input", () => {
+  cg(positionInput, positionDiv);
+  document.querySelector(".position-field_first").innerHTML =
+    positionInput.value;
+});
+
+positionInput1.addEventListener("input", () => {
+  cg(positionInput1, positionDiv1);
+  document.querySelector(".position-field_first1").innerHTML =
+    positionInput1.value;
+});
+positionInput2.addEventListener("input", () => {
+  cg(positionInput2, positionDiv2);
+  document.querySelector(".position-field_first2").innerHTML =
+    positionInput2.value;
+});
+
+employerInput.addEventListener("input", () => {
+  cg(employerInput, employerDiv);
+  document.querySelector(
+    ".position-field_second"
+  ).innerHTML = `,  ${employerInput.value}`;
+});
+employerInput1.addEventListener("input", () => {
+  cg(employerInput1, employerDiv1);
+  document.querySelector(
+    ".position-field_second1"
+  ).innerHTML = `,  ${employerInput1.value}`;
+});
+employerInput2.addEventListener("input", () => {
+  cg(employerInput2, employerDiv2);
+  document.querySelector(
+    ".position-field_second2"
+  ).innerHTML = `,  ${employerInput2.value}`;
+});
+
+const cg2 = (input) => {
+  if (!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(input.value)) {
+    input.classList.add("good");
+    input.classList.remove("error");
+  } else {
+    input.classList.remove("good");
+    input.classList.add("error");
+  }
+};
+fromInput.addEventListener("input", () => {
+  cg2(fromInput);
+  document.querySelector(
+    ".right-contact_date-from"
+  ).innerHTML = `${fromInput.value}  `;
+});
+fromInput1.addEventListener("input", () => {
+  cg2(fromInput1);
+  document.querySelector(
+    ".right-contact_date-from1"
+  ).innerHTML = `${fromInput1.value}  `;
+});
+toInput.addEventListener("input", () => {
+  cg2(toInput);
+  document.querySelector(
+    ".right-contact_date-to"
+  ).innerHTML = `-  ${toInput.value}`;
+});
+
+toInput1.addEventListener("input", () => {
+  cg2(toInput1);
+  document.querySelector(
+    ".right-contact_date-to1"
+  ).innerHTML = `-  ${toInput1.value}`;
+});
+const cg3 = (input) => {
+  if (input.value.length > 0) {
+    input.classList.add("good");
+    input.classList.remove("error");
+  } else {
+    input.classList.add("error");
+    input.classList.remove("good");
+  }
+};
+descriptionInput.addEventListener("input", () => {
+  cg3(descriptionInput);
+  document.querySelector(".right-contact_description").innerHTML =
+    descriptionInput.value;
+});
+descriptionInput1.addEventListener("input", () => {
+  cg3(descriptionInput1);
+  document.querySelector(".right-contact_description1").innerHTML =
+    descriptionInput1.value;
+});
+const createdExp = (pos, emp, start, due, desc) => {
+  return {
+    position: pos.value,
+    employer: emp.value,
+    start_date: start.value,
+    due_date: due.value,
+    description: desc.value,
+  };
+};
+const checked = (
+  positionInput,
+  employerInput,
+  fromInput,
+  toInput,
+  descriptionInput
+) => {
+  return (
+    positionInput.classList.contains("good") &&
+    employerInput.classList.contains("good") &&
+    fromInput.classList.contains("good") &&
+    toInput.classList.contains("good") &&
+    descriptionInput.classList.contains("good")
+  );
+};
+addMoreExp.addEventListener("click", () => {
+  if (added >= 1) return;
+  if (added == 0) {
+    added += 1;
+    document.querySelector(`.exp${added}`).classList.add("active");
+    document.querySelector(".separator12").classList.add("active");
+    addMoreExp.classList.add("disabled");
+    return;
+  }
+});

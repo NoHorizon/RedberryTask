@@ -2,11 +2,12 @@
   font-family: "HelveticaNeue";
   src: url("../assets/HelveticaNeue.ttc") format("truetype");
 }
+
 * {
-  padding: 0;
-  margin: 0;
+  /* padding: 0;
+  margin: 0; */
   box-sizing: border-box;
-  font-family: "HelveticaNeue", sans-serif, Helvetica;
+  font-family: "HelveticaNeue", sans-serif;
 }
 a:link,
 a:visited {
