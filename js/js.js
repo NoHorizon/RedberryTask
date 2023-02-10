@@ -58,7 +58,7 @@ const schoolDescDiv1 = document.querySelector(".school-desc-div1");
 const buttonPrev = document.querySelector(".button-prev");
 const buttonNext = document.querySelector(".button-next");
 const addMoreExp = document.querySelector("#more-experience_button");
-const addMoreScholl = document.querySelector("#more-experience_button2");
+const addMoreSchool = document.querySelector("#more-experience_button2");
 //exp1
 const positionDiv1 = document.querySelector(".position-div1");
 const employerDiv1 = document.querySelector(".employer-div1");
@@ -127,7 +127,7 @@ const user = {
 };
 window.addEventListener("DOMContentLoaded", async () => {
   degreesObj = await fetchingApiGet();
-  console.log("ffffff", degreesObj);
+  console.log("007", degreesObj);
   let vae;
   for (const item of degreesObj) {
     const option = document.createElement("option");
@@ -527,3 +527,176 @@ addMoreExp.addEventListener("click", () => {
     return;
   }
 });
+/////////////////////////////////////////////////////////////////////////////////////////////
+schoolInput.addEventListener("input", () => {
+  if (schoolInput.value.length >= 2) {
+    schoolDiv.classList.add("active");
+    error(schoolInput);
+  } else {
+    schoolDiv.classList.remove("active");
+    good(schoolInput);
+  }
+  document.querySelector(".tt-title").innerHTML = schoolInput.value;
+});
+schoolInput1.addEventListener("input", () => {
+  if (schoolInput1.value.length >= 2) {
+    schoolDiv1.classList.add("active");
+    error(schoolInput1);
+  } else {
+    schoolDiv1.classList.remove("active");
+    good(schoolInput1);
+  }
+  document.querySelector(".tt-title1").innerHTML = schoolInput1.value;
+});
+
+schoolDescInput.addEventListener("input", () => {
+  if (schoolDescInput.value.length > 0) {
+    error(schoolDescInput);
+  } else {
+    good(schoolDescInput);
+  }
+  document.querySelector(".right-content_school-desc").innerHTML =
+    schoolDescInput.value;
+});
+schoolDescInput1.addEventListener("input", () => {
+  if (schoolDescInput1.value.length > 0) {
+    error(schoolDescInput1);
+  } else {
+    good(schoolDescInput1);
+  }
+  document.querySelector(".right-content_school-desc1").innerHTML =
+    schoolDescInput1.value;
+});
+schoolInfoDegreeInput.addEventListener("input", () => {
+  if (schoolInfoDegreeInput.value) {
+    error(schoolInfoDegreeInput);
+  } else {
+    good(schoolInfoDegreeInput);
+  }
+  document.querySelector(".tt-school").innerHTML = schoolInfoDegreeInput.value;
+});
+schoolInfoDegreeInput1.addEventListener("input", () => {
+  if (schoolInfoDegreeInput1.value) {
+    error(schoolInfoDegreeInput1);
+  } else {
+    good(schoolInfoDegreeInput1);
+  }
+  document.querySelector(".tt-school1").innerHTML =
+    schoolInfoDegreeInput1.value;
+});
+schoolInfoDegreeDateInput.addEventListener("input", () => {
+  if (!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(schoolInfoDegreeDateInput.value)) {
+    error(schoolInfoDegreeDateInput);
+  } else {
+    good(schoolInfoDegreeDateInput);
+  }
+  document.querySelector(".right-content_school-years").innerHTML =
+    schoolInfoDegreeDateInput.value;
+});
+schoolInfoDegreeDateInput1.addEventListener("input", () => {
+  if (!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(schoolInfoDegreeDateInput1.value)) {
+    error(schoolInfoDegreeDateInput1);
+  } else {
+    good(schoolInfoDegreeDateInput1);
+  }
+  document.querySelector(".right-content_school-years1").innerHTML =
+    schoolInfoDegreeDateInput1.value;
+});
+addMoreSchool.addEventListener("click", () => {
+  if (addedSchool == 1) return;
+  addedSchool += 1;
+  document.querySelector(".adSchool").classList.add("active");
+  document.querySelector(".separator23").classList.add("active");
+  addMoreSchool.classList.add("disabled");
+});
+document.querySelector(".school-buttons_end").addEventListener("click", () => {
+  if (addedSchool == 0) {
+    if (
+      schoolInput.classList.contains("good") &&
+      schoolDescInput.classList.contains("good") &&
+      schoolInfoDegreeInput.classList.contains("good") &&
+      schoolInfoDegreeDateInput.classList.contains("good")
+    ) {
+      if (!user.educations.includes(objSchool1)) {
+        const id = degreesObj.filter(
+          (item) => item.title == schoolInfoDegreeInput.value
+        );
+        objSchool1 = {
+          institute: schoolInput.value,
+          degree_id: id[0].id,
+          due_date: schoolInfoDegreeDateInput.value,
+          description: schoolDescInput.value,
+        };
+        user.educations.push(objSchool1);
+        document.querySelector(".wrapper-resume").classList.add("last");
+        fetchingApi(user);
+        console.log(user);
+      }
+    }
+  } else if (addedSchool == 1) {
+    if (
+      schoolInput.classList.contains("good") &&
+      schoolDescInput.classList.contains("good") &&
+      schoolInfoDegreeInput.classList.contains("good") &&
+      schoolInfoDegreeDateInput1.classList.contains("good") &&
+      schoolInput1.classList.contains("good") &&
+      schoolDescInput1.classList.contains("good") &&
+      schoolInfoDegreeInput1.classList.contains("good") &&
+      schoolInfoDegreeDateInput1.classList.contains("good")
+    ) {
+      if (!user.educations.includes(objSchool1)) {
+        const id = degreesObj.filter(
+          (item) => item.title == schoolInfoDegreeInput.value
+        );
+
+        objSchool1 = {
+          institute: schoolInput.value,
+          degree_id: id[0].id,
+          due_date: schoolInfoDegreeDateInput.value,
+          description: schoolDescInput.value,
+        };
+        user.educations.push(objSchool1);
+      }
+      if (!user.educations.includes(objSchool2)) {
+        const id = degreesObj.filter(
+          (item) => item.title == schoolInfoDegreeInput1.value
+        );
+
+        objSchool2 = {
+          institute: schoolInput1.value,
+          degree_id: id[0].id,
+          due_date: schoolInfoDegreeDateInput1.value,
+          description: schoolDescInput1.value,
+        };
+        user.educations.push(objSchool2);
+      }
+      document.querySelector(".wrapper-resume").classList.add("last");
+      fetchingApi(user);
+      console.log(user);
+    }
+  }
+});
+document
+  .querySelector(".school-buttons_cancel")
+  .addEventListener("click", () => {
+    if (addedSchool == 0) return;
+    document.querySelector(`.adSchool`).classList.remove("active");
+    document.querySelector(`.separator23`).classList.remove("active");
+    document.querySelector(`.tt-title1`).innerHTML = "";
+    document.querySelector(`.tt-school1`).innerHTML = "";
+    document.querySelector(`.right-content_school-years1`).innerHTML = "";
+    document.querySelector(`.right-content_school-desc1`).innerHTML = "";
+
+    schoolInput1.value = "";
+    schoolInfoDegreeDateInput1.value = "";
+    schoolDescInput1.value = "";
+    schoolInfoDegreeInput1.value = "";
+    addMoreSchool.classList.remove("disabled");
+    const index = user.educations.findIndex(
+      (n, index) => index === addedSchool
+    );
+    if (index !== -1) {
+      user.educations.splice(index, 1);
+    }
+    addedSchool -= 1;
+  });
