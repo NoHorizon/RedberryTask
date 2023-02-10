@@ -332,14 +332,16 @@ surnameInput.addEventListener("input", () => {
   user.surname = surnameInput.value;
 });
 
+numberInput.placeholder = "+995 551 12 34 56";
+numberInput.addEventListener("focus", function () {
+  numberInput.value = "+995 ";
+});
 numberInput.addEventListener("input", () => {
   if (numberInput.value.length > 0) {
     phoneAssets.classList.add("active");
   }
-  if (numberInput.value.length == 0) {
-    phoneAssets.classList.remove("active");
-  }
-  if (/^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/.test(numberInput.value)) {
+
+  if (/^\+995\d{9}$/.test(numberInput.value.replace(/\s/g, ""))) {
     numberInput.classList.remove("error");
     numberInput.classList.add("good");
     numberDiv.classList.add("active");
@@ -351,6 +353,7 @@ numberInput.addEventListener("input", () => {
   phoneField.innerHTML = numberInput.value;
   user.phone_number = numberInput.value;
 });
+
 emailInput.addEventListener("input", () => {
   if (emailInput.value.length > 0) {
     mailAssets.classList.add("active");
@@ -359,7 +362,7 @@ emailInput.addEventListener("input", () => {
     mailAssets.classList.remove("active");
     emailDiv.classList.remove("active");
   }
-  if (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(emailInput.value)) {
+  if (/^[\w-\.]+@redberry\.ge$/g.test(emailInput.value)) {
     emailDiv.classList.add("active");
     emailInput.classList.add("good");
     emailInput.classList.remove("error");
