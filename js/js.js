@@ -199,7 +199,6 @@ const fetchingApiGet = async (userObj) => {
 /////////////////////////////////////////////////////////////////////////////////////////////
 buttonNext.addEventListener("click", () => {
   if (currentPage == 2) return;
-  console.log("sdsd");
   if (added == 0) {
     if (
       checked(
