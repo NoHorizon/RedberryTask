@@ -1,5 +1,5 @@
 # RedberryTask
- Task for Redberry company
+ Task for Redberry
 Bootcamp #6, intership
 
 #Figma link:
